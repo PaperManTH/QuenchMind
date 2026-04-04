@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.cuizhi</groupId>
+        <artifactId>CuiZhi-resource</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>CuiZhi-resource-service</artifactId>
+    <name>CuiZhi-resource-service</name>
+    <description>CuiZhi-resource-service</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.cuizhi</groupId>
+            <artifactId>CuiZhi-resource-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 文件上传 阿里云OSS -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.15.1</version>
+        </dependency>
+
+        <!-- Apache Tika（文档解析核心） -->
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parsers-standard-package</artifactId>
+        </dependency>
+
+        <!-- Tesseract OCR -->
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parser-ocr-module</artifactId>
+        </dependency>
+
+        <!-- 图片处理 -->
+        <dependency>
+            <groupId>net.sourceforge.tess4j</groupId>
+            <artifactId>tess4j</artifactId>
+            <version>5.9.0</version>
+        </dependency>
+
+        <!-- MyBatis Plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
