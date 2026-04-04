@@ -1,0 +1,23 @@
+server:
+  port: 18044
+
+spring:
+  application:
+    name: monitor-service
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+
+logging:
+  level:
+    com.learnflow: debug
