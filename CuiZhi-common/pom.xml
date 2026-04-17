@@ -9,8 +9,6 @@
         <relativePath>../CuiZhi-parent</relativePath>
     </parent>
     <artifactId>CuiZhi-common</artifactId>
-    <name>CuiZhi-common</name>
-    <description>CuiZhi-common</description>
     <packaging>pom</packaging>
 
     <modules>

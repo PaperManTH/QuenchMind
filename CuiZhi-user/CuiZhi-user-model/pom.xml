@@ -8,6 +8,4 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>CuiZhi-user-model</artifactId>
-    <name>CuiZhi-user-model</name>
-    <description>CuiZhi-user-model</description>
 </project>

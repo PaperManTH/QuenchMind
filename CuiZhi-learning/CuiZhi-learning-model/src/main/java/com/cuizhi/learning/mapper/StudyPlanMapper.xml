@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuizhi.learning.mapper.StudyPlanMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cuizhi.learning.model.po.StudyPlan">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="source_resource_id" property="sourceResourceId" />
+        <result column="title" property="title" />
+        <result column="goal" property="goal" />
+        <result column="start_date" property="startDate" />
+        <result column="end_date" property="endDate" />
+        <result column="total_days" property="totalDays" />
+        <result column="daily_minutes" property="dailyMinutes" />
+        <result column="progress" property="progress" />
+        <result column="status" property="status" />
+        <result column="ai_model" property="aiModel" />
+        <result column="prompt_version" property="promptVersion" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted_at" property="deletedAt" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_id, source_resource_id, title, goal, start_date, end_date, total_days, daily_minutes, progress, status, ai_model, prompt_version, created_at, updated_at, deleted_at
+    </sql>
+
+</mapper>

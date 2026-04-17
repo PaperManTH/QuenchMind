@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuizhi.learning.mapper.StudyPlanResourceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cuizhi.learning.model.po.StudyPlanResource">
+        <id column="plan_id" property="planId" />
+        <result column="resource_id" property="resourceId" />
+        <result column="sort_order" property="sortOrder" />
+        <result column="created_at" property="createdAt" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        plan_id, resource_id, sort_order, created_at
+    </sql>
+
+</mapper>

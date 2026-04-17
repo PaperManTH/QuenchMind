@@ -9,4 +9,22 @@
     </parent>
     <artifactId>CuiZhi-agent-model</artifactId>
     <name>CuiZhi-agent-model</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.cuizhi</groupId>
+            <artifactId>CuiZhi-common-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 </project>

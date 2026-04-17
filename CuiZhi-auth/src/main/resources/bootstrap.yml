@@ -1,0 +1,61 @@
+server:
+  port: 18024
+
+spring:
+  application:
+    name: cuizhi-auth
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/learnflow_auth?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+  security:
+    oauth2:
+      authorizationserver:
+        client:
+          client-id: cuizhi-auth
+          client-secret: cuizhi-secret-key
+          redirect-uri: http://127.0.0.1:18024/login/oauth2/code/cuizhi-auth
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.cuizhi.auth.model.po
+
+logging:
+  level:
+    com.cuizhi: debug
+
+jwt:
+  secret: cuizhi-secret-key
+  expire: 86400
+
+captcha:
+  timeout: 300
+  size: 4
+  width: 120
+  height: 40
+
+email:
+  code:
+    timeout: 300
+    length: 6
+
+wechat:
+  oauth:
+    app-id: ""
+    app-secret: ""
+    redirect-uri: "http://127.0.0.1:18024/login/wechat/callback"
