@@ -18,8 +18,6 @@ public class CuiZhiException extends RuntimeException {
     /**
      * 错误信息
      */
-    private String message;
-
     public CuiZhiException(Integer code, String message) {
         super(message);
         this.code = code;

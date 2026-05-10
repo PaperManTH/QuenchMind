@@ -8,4 +8,16 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>CuiZhi-user-model</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.cuizhi</groupId>
+            <artifactId>CuiZhi-common-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -11,23 +11,22 @@
         <java.version>17</java.version> <!-- Java -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring.boot.version>3.5.9</spring.boot.version> <!-- Spring Boot -->
+        <spring.boot.version>3.2.12</spring.boot.version> <!-- Spring Boot -->
         <spring.cloud.version>2023.0.1</spring.cloud.version>
         <spring.cloud.alibaba.version>2023.0.1.0</spring.cloud.alibaba.version> <!-- Spring Cloud Alibaba -->
         <spring.ai.alibaba.version>1.1.2.0</spring.ai.alibaba.version>
         <mybatis.plus.version>3.5.7</mybatis.plus.version> <!-- MyBatis Plus -->
-        <druid-spring-boot-starter.version>1.2.8</druid-spring-boot-starter.version> <!-- Druid -->
-        <mysql-connector-java.version>8.0.30</mysql-connector-java.version> <!-- MySQL Connector -->
+        <druid-spring-boot-starter.version>1.2.23</druid-spring-boot-starter.version> <!-- Druid -->
+        <postgresql.version>42.5.1</postgresql.version>
         <redisson.version>3.32.0</redisson.version> <!-- Redis -->
         <hutool.version>5.8.24</hutool.version> <!-- Hutool -->
         <jjwt.version>0.11.5</jjwt.version> <!-- JWT -->
         <lombok.version>1.18.42</lombok.version> <!-- Lombok -->
         <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version> <!-- Servlet API -->
         <fastjson2.version>2.0.58</fastjson2.version> <!-- Fastjson -->
-        <commons-lang.version>2.6</commons-lang.version> <!-- commons-lang -->
-        <xxl-job-core.version>2.3.1</xxl-job-core.version> <!-- Xxl-job -->
+        <xxl-job-core.version>2.4.2</xxl-job-core.version> <!-- Xxl-job -->
         <commons-lang3.version>3.10</commons-lang3.version> <!-- commons-lang3 -->
-        <okhttp.version>4.9.2</okhttp.version> <!-- OkHttp -->
+        <okhttp.version>4.12.0</okhttp.version> <!-- OkHttp -->
         <springdoc-openapi-starter-webmvc-ui.version>2.5.0</springdoc-openapi-starter-webmvc-ui.version> <!-- Swagger -->
         <tika.version>2.9.2</tika.version> <!-- Apache Tika -->
         <spring-boot-admin-starter-server.version>3.0.4</spring-boot-admin-starter-server.version> <!-- Admin -->
@@ -74,7 +73,19 @@
                 <artifactId>spring-ai-alibaba-starter-memory-redis</artifactId>
                 <version>${spring.ai.alibaba.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud.ai</groupId>
+                <artifactId>spring-ai-alibaba-graph-core</artifactId>
+                <version>${spring.ai.alibaba.version}</version>
+            </dependency>
 
+            <!-- postgresql -->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+                <scope>runtime</scope>
+            </dependency>
             <!-- lombok，简化类的构建-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -123,12 +134,6 @@
                 <version>${druid-spring-boot-starter.version}</version>
             </dependency>
 
-            <!-- mySQL 数据库驱动包管理 -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector-java.version}</version>
-            </dependency>
             <!-- redisson 集成 Spring Boot 启动器 -->
             <dependency>
                 <groupId>org.redisson</groupId>
@@ -142,12 +147,7 @@
                 <version>${mybatis.plus.version}</version>
             </dependency>
 
-            <!-- 工具类管理 -->
-            <dependency>
-                <groupId>commons-lang</groupId>
-                <artifactId>commons-lang</artifactId>
-                <version>${commons-lang.version}</version>
-            </dependency>
+
             <!--分布式任务调度-->
             <dependency>
                 <groupId>com.xuxueli</groupId>
@@ -192,7 +192,6 @@
                 <groupId>org.apache.tika</groupId>
                 <artifactId>tika-parsers-standard-package</artifactId>
                 <version>${tika.version}</version>
-                <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.apache.tika</groupId>

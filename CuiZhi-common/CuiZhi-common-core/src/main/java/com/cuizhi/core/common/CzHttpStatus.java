@@ -12,10 +12,13 @@ import lombok.Getter;
 public enum CzHttpStatus {
     SUCCESS(200, "成功"),
     FAIL(500, "失败"),
+    BAD_REQUEST(400, "请求参数错误"),
     UNAUTHORIZED(401, "认证失败"),
     FORBIDDEN(403, "禁止访问"),
     NOT_FOUND(404, "资源不存在"),
-    BAD_REQUEST(400, "请求参数错误"),
+    CONFLICT(409, "资源冲突"),
+    TOO_MANY_REQUESTS(429, "请求过于频繁"),
+    BAD_GATEWAY(502, "上游服务异常"),
     INTERNAL_ERROR(500, "服务器内部错误");
 
     /**
@@ -32,4 +35,3 @@ public enum CzHttpStatus {
         this.message = message;
     }
 }
-
