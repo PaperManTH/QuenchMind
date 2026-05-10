@@ -6,7 +6,6 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -34,9 +33,9 @@ public class WebSecurityConfig {
                 .formLogin(Customizer.withDefaults())
                 .oauth2Login(Customizer.withDefaults())
                 .csrf(csrf -> csrf.ignoringRequestMatchers(
-                        new AntPathRequestMatcher("/email/code"),
-                        new AntPathRequestMatcher("/login/email"),
-                        new AntPathRequestMatcher("/login/wechat/**")
+                        "/email/code",
+                        "/login/email",
+                        "/login/wechat/**"
                 ));
 
         return http.build();

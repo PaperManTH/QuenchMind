@@ -1,8 +1,7 @@
 package com.cuizhi.user.mapper;
 
-import com.cuizhi.user.model.po.User;
+import com.cuizhi.user.model.po.CzUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +10,6 @@ import org.springframework.stereotype.Repository;
  *
  * @author thpaperman
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends BaseMapper<CzUser> {
 
 }

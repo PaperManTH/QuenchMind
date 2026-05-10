@@ -18,7 +18,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
  */
 @Data
 @TableName("cz_user")
-public class User implements Serializable {
+public class CzUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

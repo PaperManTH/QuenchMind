@@ -1,8 +1,7 @@
 package com.cuizhi.user.mapper;
 
-import com.cuizhi.user.model.po.Role;
+import com.cuizhi.user.model.po.CzRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.springframework.stereotype.Repository;
 
 /**
  * <p>

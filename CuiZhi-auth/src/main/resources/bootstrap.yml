@@ -39,10 +39,6 @@ logging:
   level:
     com.cuizhi: debug
 
-jwt:
-  secret: cuizhi-secret-key
-  expire: 86400
-
 captcha:
   timeout: 300
   size: 4

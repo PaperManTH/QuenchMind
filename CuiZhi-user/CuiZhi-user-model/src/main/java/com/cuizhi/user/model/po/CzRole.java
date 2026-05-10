@@ -19,7 +19,7 @@ import lombok.Data;
  */
 @Data
 @TableName("cz_role")
-public class Role implements Serializable {
+public class CzRole implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
