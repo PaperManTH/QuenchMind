@@ -3,6 +3,8 @@ package com.cuizhi.agent.controller;
 import com.cuizhi.agent.model.dto.ChatDTO;
 import com.cuizhi.agent.model.vo.ChatVO;
 import com.cuizhi.agent.service.AgentChatService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,7 @@ import reactor.core.publisher.Flux;
 @Slf4j
 @RestController
 @RequestMapping("/agchat")
+@Tag(name = "对话生成控制器", description = "对话生成控制器")
 public class AgentChatController {
 
     @Autowired
@@ -33,6 +36,7 @@ public class AgentChatController {
      * @return 聊天结果
      */
     @PostMapping(value = "/chat", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @Operation(summary = "普通对话", description = "普通对话")
     public Flux<ChatVO> chat(@RequestBody @Valid ChatDTO chatDTO) {
         return chatService.chat(
                 chatDTO.getSessionId(),

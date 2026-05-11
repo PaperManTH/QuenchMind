@@ -3,32 +3,28 @@ server:
 
 spring:
   application:
-    name: agent-service
+    name: agent-controller
 
-  ai:
-    dashscope:
-        api-key: sk-xxxxxxxxxxxxxx
+  profiles:
+    active: dev
 
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/quenchmind?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-    username: postgres
-    password: postgres
+  config:
+    import:
+      - optional:nacos:agent-controller-dev.yaml
+      - optional:nacos:agent-service-dev.yaml
+      - optional:nacos:swagger-dev.yaml
+      - optional:nacos:logging-dev.yaml
 
-  data:
-    redis:
-      host: localhost
-      port: 6379
-      database: 0
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 6155490e-eda2-446d-b5de-85d176fb72cf
+        group: QuenchMind
+        file-extension: yaml
+        refresh-enabled: true
 
-#  cloud:
-#    nacos:
-#      config:
-#        enabled: true # 保持开启，但因为上面写了 optional，所以不会报错
-#        server-addr: localhost:8848
-#      discovery:
-#        enabled: false
-
-logging:
-  level:
-    com.cuizhi: debug
+      discovery:
+        server-addr: localhost:8848
+        namespace: 6155490e-eda2-446d-b5de-85d176fb72cf
+        group: QuenchMind

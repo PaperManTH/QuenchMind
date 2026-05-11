@@ -37,6 +37,12 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
+        <!-- Nacos 客户端依赖 -->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+        </dependency>
+
         <!-- Redis 缓存 -->
         <dependency>
             <groupId>org.redisson</groupId>

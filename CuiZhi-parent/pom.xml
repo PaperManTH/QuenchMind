@@ -8,43 +8,52 @@
     <packaging>pom</packaging>
 
     <properties>
-        <java.version>17</java.version> <!-- Java -->
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring.boot.version>3.2.12</spring.boot.version> <!-- Spring Boot -->
+        <spring.boot.version>3.2.12</spring.boot.version>
         <spring.cloud.version>2023.0.1</spring.cloud.version>
-        <spring.cloud.alibaba.version>2023.0.1.0</spring.cloud.alibaba.version> <!-- Spring Cloud Alibaba -->
+        <spring.cloud.alibaba.version>2023.0.3.2</spring.cloud.alibaba.version>
         <spring.ai.alibaba.version>1.1.2.0</spring.ai.alibaba.version>
-        <mybatis.plus.version>3.5.7</mybatis.plus.version> <!-- MyBatis Plus -->
-        <druid-spring-boot-starter.version>1.2.23</druid-spring-boot-starter.version> <!-- Druid -->
+        <nacos.client.version>3.2.0</nacos.client.version>
+        <mybatis.plus.version>3.5.7</mybatis.plus.version>
+        <druid-spring-boot-starter.version>1.2.23</druid-spring-boot-starter.version>
         <postgresql.version>42.5.1</postgresql.version>
-        <redisson.version>3.32.0</redisson.version> <!-- Redis -->
-        <hutool.version>5.8.24</hutool.version> <!-- Hutool -->
-        <jjwt.version>0.11.5</jjwt.version> <!-- JWT -->
-        <lombok.version>1.18.42</lombok.version> <!-- Lombok -->
-        <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version> <!-- Servlet API -->
-        <fastjson2.version>2.0.58</fastjson2.version> <!-- Fastjson -->
-        <xxl-job-core.version>2.4.2</xxl-job-core.version> <!-- Xxl-job -->
-        <commons-lang3.version>3.10</commons-lang3.version> <!-- commons-lang3 -->
-        <okhttp.version>4.12.0</okhttp.version> <!-- OkHttp -->
-        <springdoc-openapi-starter-webmvc-ui.version>2.5.0</springdoc-openapi-starter-webmvc-ui.version> <!-- Swagger -->
-        <tika.version>2.9.2</tika.version> <!-- Apache Tika -->
-        <spring-boot-admin-starter-server.version>3.0.4</spring-boot-admin-starter-server.version> <!-- Admin -->
+        <redisson.version>3.32.0</redisson.version>
+        <hutool.version>5.8.24</hutool.version>
+        <jjwt.version>0.11.5</jjwt.version>
+        <lombok.version>1.18.42</lombok.version>
+        <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
+        <fastjson2.version>2.0.58</fastjson2.version>
+        <xxl-job-core.version>2.4.2</xxl-job-core.version>
+        <commons-lang3.version>3.10</commons-lang3.version>
+        <okhttp.version>4.12.0</okhttp.version>
+        <springdoc-openapi-starter-webmvc-ui.version>2.5.0</springdoc-openapi-starter-webmvc-ui.version>
+        <tika.version>2.9.2</tika.version>
+        <spring-boot-admin-starter-server.version>3.0.4</spring-boot-admin-starter-server.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring.cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Nacos Client (用于 Prompt 和 Agent Registry 功能) -->
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos.client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -76,6 +85,11 @@
             <dependency>
                 <groupId>com.alibaba.cloud.ai</groupId>
                 <artifactId>spring-ai-alibaba-graph-core</artifactId>
+                <version>${spring.ai.alibaba.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud.ai</groupId>
+                <artifactId>spring-ai-alibaba-agent-framework</artifactId>
                 <version>${spring.ai.alibaba.version}</version>
             </dependency>
 
@@ -146,7 +160,6 @@
                 <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis.plus.version}</version>
             </dependency>
-
 
             <!--分布式任务调度-->
             <dependency>
