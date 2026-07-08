@@ -1,0 +1,20 @@
+
+spring:
+  application:
+    name: learning-service
+
+  profiles:
+    active: dev
+
+  config:
+    import:
+      - optional:nacos:learning-service-dev.yaml
+
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 6155490e-eda2-446d-b5de-85d176fb72cf
+        group: QuenchMind
+        file-extension: yaml
+        refresh-enabled: true
