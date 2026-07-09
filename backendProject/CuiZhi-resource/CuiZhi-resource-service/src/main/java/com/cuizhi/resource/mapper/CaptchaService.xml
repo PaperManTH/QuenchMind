@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuizhi.resource.mapper.ResourceKnowledgeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cuizhi.resource.model.po.ResourceKnowledge">
+        <id column="id" property="id" />
+        <result column="resource_id" property="resourceId" />
+        <result column="chunk_id" property="chunkId" />
+        <result column="title" property="title" />
+        <result column="summary" property="summary" />
+        <result column="keywords" property="keywords" />
+        <result column="difficulty" property="difficulty" />
+        <result column="category" property="category" />
+        <result column="importance" property="importance" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+        <result column="deleted_at" property="deletedAt" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, resource_id, chunk_id, title, summary, keywords, difficulty, category, importance, created_at, updated_at, deleted_at
+    </sql>
+
+</mapper>

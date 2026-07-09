@@ -1,0 +1,29 @@
+
+spring:
+  application:
+    name: cuizhi-learning
+
+  profiles:
+    active: dev
+
+  config:
+    import:
+      - optional:nacos:learning-controller-dev.yaml
+      - optional:nacos:learning-service-dev.yaml
+      - optional:nacos:swagger-dev.yaml
+      - optional:nacos:logging-dev.yaml
+      - optional:nacos:mybatis-plus-dev.yaml
+
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 6155490e-eda2-446d-b5de-85d176fb72cf
+        group: QuenchMind
+        file-extension: yaml
+        refresh-enabled: true
+
+      discovery:
+        server-addr: localhost:8848
+        namespace: 6155490e-eda2-446d-b5de-85d176fb72cf
+        group: QuenchMind
